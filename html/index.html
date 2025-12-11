@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistema de Moeda Estudantil</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="preload" as="image" href="assets/icons.svg" type="image/svg+xml">
+</head>
+<body class="has-video-bg">
+  <video autoplay muted loop playsinline class="bg-video">
+    <source src="assets/img/andandopuc.mp4" type="video/mp4">
+  </video>
+
+  <header>
+    <div class="header-container">
+      <a href="index.html" class="logo with-icon"><svg class="icon icon-lg" aria-hidden="true"><use href="assets/icons.svg#coin"></use></svg><span>Moeda Estudantil</span></a>
+      <nav>
+        <ul>
+          <li><a href="aluno/cadastro.html" class="with-icon"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#user"></use></svg><span>Cadastro Aluno</span></a></li>
+          <li><a href="professor/cadastro.html" class="with-icon"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#cap"></use></svg><span>Cadastro Professor</span></a></li>
+          <li><a href="empresa/cadastro.html" class="with-icon"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#briefcase"></use></svg><span>Cadastro Empresa</span></a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="card text-center">
+      <h1 class="with-icon" style="font-size: 2.5rem; margin-bottom: 1rem; justify-content:center; gap:.75rem;">
+        <svg class="icon icon-xl" aria-hidden="true"><use href="assets/icons.svg#coin"></use></svg>
+        <span>Sistema de Moeda Estudantil</span>
+      </h1>
+      <p style="font-size: 1.125rem; color: var(--text-secondary); margin-bottom: 2rem;">
+        Reconhecendo o mérito dos alunos através de uma moeda virtual
+      </p>
+      
+      <div class="grid grid-3 mt-3">
+        <div class="card">
+          <h2 class="with-icon" style="color: var(--primary-color); margin-bottom: 1rem;">
+            <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#user"></use></svg>
+            <span>Alunos</span>
+          </h2>
+          <p style="margin-bottom: 1.5rem;">Receba moedas por seu desempenho e troque por vantagens exclusivas</p>
+          <a href="aluno/cadastro.html" class="btn btn-primary btn-block">Cadastrar-se</a>
+          <a href="login/index.html" class="btn btn-primary btn-block">Login Como Aluno</a>
+
+        </div>
+
+        <div class="card">
+          <h2 class="with-icon" style="color: var(--primary-color); margin-bottom: 1rem;">
+            <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#cap"></use></svg>
+            <span>Professores</span>
+          </h2>
+          <p style="margin-bottom: 1.5rem;">Reconheça o mérito dos seus alunos distribuindo moedas</p>
+          <a href="professor/cadastro.html" class="btn btn-primary btn-block">Cadastrar-se</a>
+          <a href="login/login-professor.html" class="btn btn-primary btn-block">Login Como Professor</a>
+
+        </div>
+
+        <div class="card">
+          <h2 class="with-icon" style="color: var(--primary-color); margin-bottom: 1rem;">
+            <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#briefcase"></use></svg>
+            <span>Empresas</span>
+          </h2>
+          <p style="margin-bottom: 1.5rem;">Ofereça vantagens e conecte-se com estudantes talentosos</p>
+          <a href="empresa/cadastro.html" class="btn btn-primary btn-block">Cadastrar-se</a>
+          <a href="login/login-empresa.html" class="btn btn-primary btn-block">Login Como Empresa</a>
+
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <p>&copy; 2025 Sistema de Moeda Estudantil. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+  <script src="js/ui.js" defer></script>
+</body>
+</html>
+

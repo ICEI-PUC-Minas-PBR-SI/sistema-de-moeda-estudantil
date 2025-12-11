@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trocar Moedas - Sistema de Moeda Estudantil</title>
+  <link rel="stylesheet" href="../css/styles.css" />
+  <link rel="stylesheet" href="../css/aluno.css" />
+  <link rel="preload" as="image" href="../assets/icons.svg" type="image/svg+xml" />
+
+  <style>
+    /* --- 💎 Cards Padronizados --- */
+    .advantage-card {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 14px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      transition: .25s ease;
+      height: 350px;                /* 🔥 Altura padronizada */
+      width: 260px;                 /* 🔥 Largura padronizada */
+      overflow: hidden;
+    }
+
+    .advantage-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 5px 14px rgba(0,0,0,0.15);
+    }
+
+    .advantage-card img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;            /* 🔥 Mantém padronizado */
+      border-radius: 10px;
+      margin-bottom: 0.6rem;
+    }
+
+    .advantage-card h3 {
+      font-size: 1rem;
+      margin-bottom: 0.3rem;
+      font-weight: 600;
+    }
+
+    .advantage-card p {
+      font-size: 0.85rem;
+      margin: 4px 0;
+      color: #444;
+    }
+
+    .truncate {
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;        /* 🔥 Limita a 3 linhas */
+      -webkit-box-orient: vertical;
+      max-height: 55px;
+    }
+
+    .price {
+      font-weight: bold;
+      color: #0077ff;
+      margin: 0.7rem 0;
+    }
+
+    #advantagesContainer.grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1.6rem;
+      padding: 1rem;
+      justify-items: center;
+    }
+
+    button:disabled {
+      background: #e5e7eb !important;
+      color: #9ca3af !important;
+      border: 1px solid #d1d5db;
+      cursor: not-allowed;
+      border-radius: 8px;
+      padding: 6px 10px;
+    }
+
+    /* 🌟 Botões modernos dos cards de vantagem */
+.advantage-card button {
+  width: 100%;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  background: linear-gradient(135deg, #0d6efd, #3b8bff);
+  color: white;
+  transition: all 0.25s ease;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Hover apenas quando está habilitado */
+.advantage-card button:not(:disabled):hover {
+  background: linear-gradient(135deg, #0b5ed7, #2f7bea);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 14px rgba(0, 0, 0, 0.22);
+}
+
+/* Efeito de clique */
+.advantage-card button:not(:disabled):active {
+  transform: scale(0.96);
+}
+
+/* Estado desabilitado */
+.advantage-card button:disabled {
+  background: #d5d5d5 !important;
+  color: #777 !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+  </style>
+</head>
+
+<body class="has-video-bg">
+  <video autoplay muted loop playsinline class="bg-video" poster="../assets/img/pucfundo.png">
+    <source src="../assets/img/andandopraca.mp4" type="video/mp4">
+  </video>
+
+  <header>
+    <div class="header-container">
+      <a href="../index.html" class="logo with-icon">
+        <svg class="icon icon-lg" aria-hidden="true"><use href="../assets/icons.svg#coin"></use></svg>
+        <span>Moeda Estudantil</span>
+      </a>
+      <nav>
+        <ul>
+          <li><a href="perfil.html" class="with-icon"><svg class="icon"><use href="../assets/icons.svg#user"></use></svg><span>Perfil</span></a></li>
+          <li><a href="extrato.html" class="with-icon"><svg class="icon"><use href="../assets/icons.svg#chart"></use></svg><span>Extrato</span></a></li>
+          <li><a href="trocar-moedas.html" class="with-icon active"><svg class="icon"><use href="../assets/icons.svg#exchange"></use></svg><span>Trocar Moedas</span></a></li>
+          <li><a href="#" id="logoutLink" class="with-icon"><svg class="icon"><use href="../assets/icons.svg#logout"></use></svg><span>Sair</span></a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="balance-display">
+      <div class="balance-label">Seu Saldo Disponível</div>
+      <div id="balanceAmount" class="balance-amount">Carregando...</div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <h2 class="card-title">Vantagens Disponíveis</h2>
+        <p style="color: var(--text-secondary);">Escolha uma vantagem para trocar suas moedas</p>
+      </div>
+
+      <div id="loading" style="margin:1rem;">Carregando vantagens...</div>
+      <div id="error" style="display:none; color:#b00020; margin:1rem;"></div>
+      <div id="advantagesContainer" class="grid" style="display:none;"></div>
+      <div id="noAdvantages" style="display:none; padding:1rem; color:var(--text-secondary);">Nenhuma vantagem disponível no momento.</div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <p>&copy; 2025 Sistema de Moeda Estudantil. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="../js/ui.js" defer></script>
+  <script src="../js/trocar-moedas.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>
+  (function() {
+    emailjs.init("fY8VeHGLC_U5SEtpH");
+  })();
+</script>
+
+</body>
+</html>

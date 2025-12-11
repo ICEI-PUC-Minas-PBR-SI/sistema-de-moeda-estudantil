@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perfil do Professor - Sistema de Moeda Estudantil</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="preload" as="image" href="../assets/icons.svg" type="image/svg+xml">
+</head>
+<body class="has-video-bg">
+  <video autoplay muted loop playsinline class="bg-video">
+    <source src="../assets/img/andandopraca.mp4" type="video/mp4">
+  </video>
+
+  <header>
+    <div class="header-container">
+      <a href="../index.html" class="logo with-icon"><svg class="icon icon-lg" aria-hidden="true"><use href="../assets/icons.svg#coin"></use></svg><span>Moeda Estudantil</span></a>
+      <nav>
+        <ul>
+          <li><a href="perfil.html" class="with-icon"><svg class="icon" aria-hidden="true"><use href="../assets/icons.svg#user"></use></svg><span>Perfil</span></a></li>
+          <li><a href="enviar.html" class="with-icon"><svg class="icon" aria-hidden="true"><use href="../assets/icons.svg#wallet"></use></svg><span>Enviar Moedas</span></a></li>
+          <li><a href="extrato.html" class="with-icon"><svg class="icon" aria-hidden="true"><use href="../assets/icons.svg#chart"></use></svg><span>Extrato</span></a></li>
+          <li><a href="alunos.html" class="with-icon"><svg class="icon" aria-hidden="true"><use href="../assets/icons.svg#user"></use></svg><span>Alunos</span></a></li>
+          <li><a href="../index.html" class="with-icon"><svg class="icon" aria-hidden="true"><use href="../assets/icons.svg#logout"></use></svg><span>Sair</span></a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- GET /api/professors/professor/{id} -->
+    <div class="balance-display">
+      <div class="balance-label">Saldo Disponível para Distribuir</div>
+      <div class="balance-amount">750</div>
+      <p>De um total inicial de 1.000 moedas</p>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <h2 class="card-title">Meu Perfil</h2>
+      </div>
+
+      <div class="profile-card">
+        <div class="profile-avatar">MS</div>
+        <div class="profile-info">
+          <h1 class="profile-name">Prof. Maria Santos</h1>
+          <div class="profile-detail"><strong>Email:</strong> maria.santos@universidade.edu.br</div>
+          <div class="profile-detail"><strong>CPF:</strong> 987.654.321-00</div>
+          <div class="profile-detail"><strong>Departamento:</strong> Ciência da Computação</div>
+          <div class="profile-detail"><strong>Instituição:</strong> Universidade Federal</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <h2 class="card-title">Estatísticas</h2>
+      </div>
+      <div class="grid grid-3">
+        <div class="card" style="text-align: center;">
+          <div style="font-size: 2.5rem; color: var(--primary-color); font-weight: 700;">250</div>
+          <div style="color: var(--text-secondary);">Moedas Distribuídas</div>
+        </div>
+        <div class="card" style="text-align: center;">
+          <div style="font-size: 2.5rem; color: var(--success-color); font-weight: 700;">12</div>
+          <div style="color: var(--text-secondary);">Alunos Reconhecidos</div>
+        </div>
+        <div class="card" style="text-align: center;">
+          <div style="font-size: 2.5rem; color: var(--warning-color); font-weight: 700;">750</div>
+          <div style="color: var(--text-secondary);">Moedas Restantes</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <h2 class="card-title">Ações Rápidas</h2>
+      </div>
+      <div class="grid grid-3">
+        <a href="enviar.html" class="btn btn-primary btn-block with-icon"><svg class="icon" aria-hidden="true"><use href="../assets/icons.svg#wallet"></use></svg><span>Enviar Moedas</span></a>
+        <a href="alunos.html" class="btn btn-secondary btn-block with-icon"><svg class="icon" aria-hidden="true"><use href="../assets/icons.svg#user"></use></svg><span>Ver Alunos</span></a>
+        <a href="extrato.html" class="btn btn-secondary btn-block with-icon"><svg class="icon" aria-hidden="true"><use href="../assets/icons.svg#chart"></use></svg><span>Ver Extrato</span></a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <p>&copy; 2025 Sistema de Moeda Estudantil. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+  <script src="../js/ui.js" defer></script>
+  <script src="../js/professor-perfil.js" defer></script>
+</body>
+</html>
+

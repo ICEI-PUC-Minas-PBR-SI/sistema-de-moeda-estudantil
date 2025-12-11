@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minhas Vantagens - Sistema de Moeda Estudantil</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="preload" as="image" href="../assets/icons.svg" type="image/svg+xml">
+</head>
+<body class="has-video-bg">
+  <video autoplay muted loop playsinline class="bg-video">
+    <source src="../assets/img/andandopraca.mp4" type="video/mp4">
+  </video>
+
+  <header>
+    <div class="header-container">
+      <a href="../index.html" class="logo with-icon">
+        <svg class="icon icon-lg"><use href="../assets/icons.svg#coin"></use></svg>
+        <span>Moeda Estudantil</span>
+      </a>
+      <nav>
+        <ul>
+          <li><a href="perfil.html" class="with-icon"><svg class="icon"><use href="../assets/icons.svg#briefcase"></use></svg><span>Perfil</span></a></li>
+          <li><a href="vantagens.html" class="with-icon"><svg class="icon"><use href="../assets/icons.svg#wallet"></use></svg><span>Minhas Vantagens</span></a></li>
+          <li><a href="cadastrar-vantagem.html" class="with-icon"><svg class="icon"><use href="../assets/icons.svg#save"></use></svg><span>Nova Vantagem</span></a></li>
+          <li><a href="../index.html" class="with-icon"><svg class="icon"><use href="../assets/icons.svg#logout"></use></svg><span>Sair</span></a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="card">
+      <div class="card-header flex-between">
+        <div>
+          <h2 class="card-title">Minhas Vantagens</h2>
+          <p style="color: var(--text-secondary);">Gerencie as vantagens oferecidas pela sua empresa</p>
+        </div>
+        <a href="cadastrar-vantagem.html" class="btn btn-primary with-icon">
+          <svg class="icon"><use href="../assets/icons.svg#save"></use></svg>
+          <span>Nova Vantagem</span>
+        </a>
+      </div>
+
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Nome</th>
+              <th>Custo</th>
+              <th>Disponível</th>
+              <th>Resgates</th>
+              <th>Status</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+
+          <tbody id="vantagensList">
+            <!-- preenchido via JS -->
+          </tbody>
+
+        </table>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <p>&copy; 2025 Sistema de Moeda Estudantil. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="../js/ui.js" defer></script>
+  <script src="../js/minha-vantagem.js" defer></script>
+</body>
+</html>

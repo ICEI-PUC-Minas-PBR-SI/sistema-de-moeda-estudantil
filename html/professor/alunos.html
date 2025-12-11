@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alunos - Sistema de Moeda Estudantil</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="preload" as="image" href="../assets/icons.svg" type="image/svg+xml">
+</head>
+<body class="has-video-bg">
+  <video autoplay muted loop playsinline class="bg-video">
+    <source src="../assets/img/andandopuc.mp4" type="video/mp4">
+  </video>
+
+  <header>
+    <div class="header-container">
+      <a href="../index.html" class="logo with-icon"><svg class="icon icon-lg" aria-hidden="true"><use href="../assets/icons.svg#coin"></use></svg><span>Moeda Estudantil</span></a>
+      <nav>
+        <ul>
+          <li><a href="perfil.html" class="with-icon"><svg class="icon" aria-hidden="true"><use href="../assets/icons.svg#user"></use></svg><span>Perfil</span></a></li>
+          <li><a href="enviar.html" class="with-icon"><svg class="icon" aria-hidden="true"><use href="../assets/icons.svg#wallet"></use></svg><span>Enviar Moedas</span></a></li>
+          <li><a href="extrato.html" class="with-icon"><svg class="icon" aria-hidden="true"><use href="../assets/icons.svg#chart"></use></svg><span>Extrato</span></a></li>
+          <li><a href="alunos.html" class="with-icon"><svg class="icon" aria-hidden="true"><use href="../assets/icons.svg#user"></use></svg><span>Alunos</span></a></li>
+          <li><a href="../index.html" class="with-icon"><svg class="icon" aria-hidden="true"><use href="../assets/icons.svg#logout"></use></svg><span>Sair</span></a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- GET /api/students/institution/{institutionId} -->
+    <div class="card">
+      <div class="card-header">
+        <h2 class="card-title">Alunos da Universidade Federal</h2>
+        <p style="color: var(--text-secondary);">Lista de alunos da sua instituição</p>
+      </div>
+
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Nome</th>
+              <th>Email</th>
+              <th>Curso</th>
+              <th>Saldo</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>João Silva</strong></td>
+              <td>joao.silva@email.com</td>
+              <td>Engenharia de Software</td>
+              <td><span style="color: var(--success-color); font-weight: 600;">1.250</span></td>
+              <td>
+                <a href="enviar.html?aluno=1" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.875rem;">Enviar Moedas</a>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Maria Oliveira</strong></td>
+              <td>maria.oliveira@email.com</td>
+              <td>Ciência da Computação</td>
+              <td><span style="color: var(--success-color); font-weight: 600;">890</span></td>
+              <td>
+                <a href="enviar.html?aluno=2" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.875rem;">Enviar Moedas</a>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Pedro Santos</strong></td>
+              <td>pedro.santos@email.com</td>
+              <td>Sistemas de Informação</td>
+              <td><span style="color: var(--success-color); font-weight: 600;">1.450</span></td>
+              <td>
+                <a href="enviar.html?aluno=3" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.875rem;">Enviar Moedas</a>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Ana Costa</strong></td>
+              <td>ana.costa@email.com</td>
+              <td>Engenharia de Software</td>
+              <td><span style="color: var(--success-color); font-weight: 600;">670</span></td>
+              <td>
+                <a href="enviar.html?aluno=4" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.875rem;">Enviar Moedas</a>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Carlos Lima</strong></td>
+              <td>carlos.lima@email.com</td>
+              <td>Ciência da Computação</td>
+              <td><span style="color: var(--success-color); font-weight: 600;">2.100</span></td>
+              <td>
+                <a href="enviar.html?aluno=5" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.875rem;">Enviar Moedas</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <p>&copy; 2025 Sistema de Moeda Estudantil. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+  <script src="../js/ui.js" defer></script>
+  <script src="../js/professor-alunos.js" defer></script>
+</body>
+</html>
+

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro de Empresa - Sistema de Moeda Estudantil</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="preload" as="image" href="../assets/icons.svg" type="image/svg+xml">
+</head>
+<body class="bg-pucfundo">
+  <header>
+    <div class="header-container">
+      <a href="../index.html" class="logo with-icon">
+        <svg class="icon icon-lg" aria-hidden="true"><use href="../assets/icons.svg#coin"></use></svg>
+        <span>Moeda Estudantil</span>
+      </a>
+      <nav>
+        <ul>
+          <li><a href="../index.html" class="with-icon"><svg class="icon" aria-hidden="true"><use href="../assets/icons.svg#home"></use></svg><span>Início</span></a></li>
+          <li><a href="../login/index.html" class="with-icon"><svg class="icon" aria-hidden="true"><use href="../assets/icons.svg#login"></use></svg><span>Login</span></a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="card" style="max-width: 800px; margin: 2rem auto;">
+      <div class="card-header">
+        <h1 class="card-title">Cadastro de Empresa Parceira</h1>
+        <p style="color: var(--text-secondary);">Torne-se um parceiro e ofereça vantagens aos estudantes</p>
+      </div>
+
+      <!-- FORM CONTROLADO VIA JS -->
+      <form id="registerCompanyForm" novalidate>
+        <div id="formMessage" style="display:none; margin-bottom:1rem;"></div>
+
+        <div class="grid grid-2">
+          <div class="form-group">
+            <label for="nomeFantasia">Nome Fantasia *</label>
+            <input type="text" id="nomeFantasia" required>
+          </div>
+
+          <div class="form-group">
+            <label for="razaoSocial">Razão Social *</label>
+            <input type="text" id="razaoSocial" required>
+          </div>
+        </div>
+
+        <div class="grid grid-2">
+          <div class="form-group">
+            <label for="cnpj">CNPJ *</label>
+            <input type="text" id="cnpj" placeholder="00.000.000/0000-00" required>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Corporativo *</label>
+            <input type="email" id="email" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="senha">Senha *</label>
+          <input type="password" id="senha" required>
+        </div>
+
+        <div class="alert alert-info">
+          <strong>Benefícios de ser parceiro:</strong>
+          <ul style="margin-top: 0.5rem; margin-left: 1.5rem;">
+            <li>Visibilidade para milhares de estudantes</li>
+            <li>Conexão com talentos universitários</li>
+            <li>Fortalecimento da marca no ambiente acadêmico</li>
+          </ul>
+        </div>
+
+        <div class="flex gap-2 mt-3">
+          <button id="submitBtn" type="submit" class="btn btn-primary with-icon">
+            <svg class="icon" aria-hidden="true"><use href="../assets/icons.svg#save"></use></svg>
+            <span>Cadastrar Empresa</span>
+          </button>
+          <a href="../login/index.html" class="btn btn-secondary with-icon">
+            <svg class="icon" aria-hidden="true"><use href="../assets/icons.svg#login"></use></svg>
+            <span>Já tenho conta</span>
+          </a>
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <p>&copy; 2025 Sistema de Moeda Estudantil. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="../js/ui.js" defer></script>
+  <script src="../js/cadastro-empresa.js" defer></script>
+</body>
+</html>
